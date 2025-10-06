@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class TeamMessage extends Model, Message
+class TeamMessage extends Model
+    //, Message
 {
     /** @use HasFactory<\Database\Factories\TeamMessageFactory> */
     use HasFactory;
@@ -14,7 +16,7 @@ class TeamMessage extends Model, Message
         'sender',
         'inhalt',
         'task',
-    ]
+    ];
 
     public function user(): BelongsToMany
     {

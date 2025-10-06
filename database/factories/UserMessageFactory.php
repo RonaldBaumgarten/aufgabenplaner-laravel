@@ -19,9 +19,5 @@ class UserMessageFactory extends Factory
         return [
             'inhalt' => fake()->sentence(),
         ];
-/*
-            'sender',
-            'user',
- */
     }
 }

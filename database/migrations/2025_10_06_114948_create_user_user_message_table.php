@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
+use App\Models\UserMessage;
 
 return new class extends Migration
 {
@@ -11,11 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('user_user_message', function (Blueprint $table) {
             $table->id();
-            $table->string('bezeichnung');
-            $table->string('beschreibung');
-            //$table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class);
+            //$table->foreignId('empfaenger_id');
+            $table->foreignIdFor(UserMessage::class);
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('user_user_message');
     }
 };

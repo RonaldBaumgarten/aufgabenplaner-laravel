@@ -12,6 +12,7 @@ abstract class Message extends Model
 
     protected $fillable = [
         'sender',
+        // 'empfaenger',
         'inhalt',
     ]
 

@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
-use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
@@ -14,7 +12,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        return view('tasks', [
+            'tasks' => Task::all()
+        ]);
     }
 
     /**
@@ -28,36 +28,23 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTaskRequest $request)
+    public function store(Request $request)
     {
         //
     }
 
     /**
-     * Display all tasks
-     */
-    public function showAll()
-    {
-        return view('tasks', [
-            //'user' => User::findOrFail($id)
-        ]);
-    }
-
-
-    /**
      * Display the specified resource.
      */
-    public function show(string $id): View
+    public function show(string $id)
     {
-        return view('task', [
-            'task' => $id
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Task $task)
+    public function edit(string $id)
     {
         //
     }
@@ -65,7 +52,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -73,7 +60,7 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Task $task)
+    public function destroy(string $id)
     {
         //
     }

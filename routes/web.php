@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasks', [TaskController::class, 'showAll']);
+Route::get('/tasks', [TaskController::class, 'index']);
 Route::get('/task/{id}', [TaskController::class, 'show']);
 
 Route::get('/messages', [MessageController::class, 'showAll']);

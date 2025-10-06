@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class UserMessage extends Model
     //, Message
@@ -12,14 +13,18 @@ class UserMessage extends Model
     use HasFactory;
 
     protected $fillable = [
-        'sender',
         'inhalt',
-        'user',
     ];
 
-    public function user(): BelongsToMany
+    public function users(): BelongsToMany
     {
-        return $this->belongsToMany(user::class);
+        return $this->belongsToMany(User::class);
     }
 
+/*
+    public function empfaengers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }
+ */
 }
