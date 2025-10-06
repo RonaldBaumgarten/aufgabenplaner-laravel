@@ -13,9 +13,7 @@ class Task extends Model
     protected $fillable = [
         'bezeichnung',
         'beschreibung',
-        // 'mitarbeiterList',
-        // 'untertasksList, 
-    ]
+    ];
 
     public function users(): BelongsToMany
     {

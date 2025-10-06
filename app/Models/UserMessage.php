@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserMessage extends Model, Message
+class UserMessage extends Model
+    //, Message
 {
     /** @use HasFactory<\Database\Factories\UserMessageFactory> */
     use HasFactory;
@@ -14,7 +15,7 @@ class UserMessage extends Model, Message
         'sender',
         'inhalt',
         'user',
-    ]
+    ];
 
     public function user(): BelongsToMany
     {

@@ -17,7 +17,11 @@ class UserMessageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'inhalt' => fake()->sentence(),
         ];
+/*
+            'sender',
+            'user',
+ */
     }
 }

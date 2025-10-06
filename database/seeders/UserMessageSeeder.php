@@ -12,6 +12,5 @@ class UserMessageSeeder extends Seeder
      */
     public function run(): void
     {
-        //
     }
 }
